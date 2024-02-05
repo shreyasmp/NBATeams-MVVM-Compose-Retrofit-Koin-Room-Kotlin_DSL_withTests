@@ -5,9 +5,9 @@ import kotlinx.parcelize.Parcelize
 
 @Parcelize
 data class Player(
-    val id: Int? = null,
-    val first_name: String? = null,
-    val last_name: String? = null,
-    val position: String? = null,
-    val number: Int? = null,
+    val id: Int = 0,
+    val first_name: String = "",
+    val last_name: String = "",
+    val position: String = "",
+    val number: Int = 0,
 ) : Parcelable

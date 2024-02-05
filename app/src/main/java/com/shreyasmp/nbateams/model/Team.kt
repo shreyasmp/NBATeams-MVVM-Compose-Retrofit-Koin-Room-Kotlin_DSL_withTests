@@ -5,9 +5,9 @@ import kotlinx.parcelize.Parcelize
 
 @Parcelize
 data class Team(
-    val wins: Int? = null,
-    val losses: Int? = null,
-    val full_name: String? = null,
-    val id: Int? = null,
-    val players: MutableList<Player>? = null
+    val wins: Int = 0,
+    val losses: Int = 0,
+    val full_name: String = "",
+    val id: Int = 0,
+    val players: List<Player> = emptyList()
 ) : Parcelable

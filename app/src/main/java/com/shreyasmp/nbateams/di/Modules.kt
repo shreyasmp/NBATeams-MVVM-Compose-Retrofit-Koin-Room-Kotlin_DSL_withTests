@@ -1,6 +1,8 @@
 package com.shreyasmp.nbateams.di
 
+import androidx.room.Room
 import com.jakewharton.retrofit2.adapter.kotlin.coroutines.CoroutineCallAdapterFactory
+import com.shreyasmp.nbateams.database.NBATeamsDatabase
 import com.shreyasmp.nbateams.repository.NBATeamsRepository
 import com.shreyasmp.nbateams.repository.NBATeamsRepositoryImpl
 import com.shreyasmp.nbateams.service.NBATeamService
@@ -64,4 +66,9 @@ val viewModelModule = module {
     viewModel {
         NBATeamsViewModel(repository = get())
     }
+}
+
+val roomDatabaseModule = module {
+    single { Room.databaseBuilder(get(), NBATeamsDatabase::class.java, "NBATeamDB").build() }
+    single { get<NBATeamsDatabase>().getNBATeamsDao() }
 }

@@ -13,17 +13,15 @@ import com.shreyasmp.nbateams.model.Player
 @Composable
 fun PlayerList(
     padding: PaddingValues,
-    playersList: MutableList<Player>?
+    playersList: List<Player>
 ) {
     LazyColumn(
         modifier = Modifier.padding(padding),
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
-        playersList?.let {
-            items(it) { player ->
-                PlayerListItem(player = player)
-            }
+        items(playersList) { player ->
+            PlayerListItem(player = player)
         }
     }
 }
