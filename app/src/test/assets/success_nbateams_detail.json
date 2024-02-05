@@ -1,0 +1,127 @@
+{
+  "wins": 45,
+  "losses": 20,
+  "full_name": "Boston Celtics",
+  "id": 1,
+  "players": [
+    {
+      "id": 37729,
+      "first_name": "Kadeem",
+      "last_name": "Allen",
+      "position": "SG",
+      "number": 45
+    },
+    {
+      "id": 30508,
+      "first_name": "Aron",
+      "last_name": "Baynes",
+      "position": "C",
+      "number": 46
+    },
+    {
+      "id": 30847,
+      "first_name": "Jabari",
+      "last_name": "Bird",
+      "position": "SG",
+      "number": 26
+    },
+    {
+      "id": 45455,
+      "first_name": "Jaylen",
+      "last_name": "Brown",
+      "position": "G-F",
+      "number": 7
+    },
+    {
+      "id": 989,
+      "first_name": "Gordon",
+      "last_name": "Hayward",
+      "position": "G-F",
+      "number": 20
+    },
+    {
+      "id": 12,
+      "first_name": "Al",
+      "last_name": "Horford",
+      "position": "F-C",
+      "number": 42
+    },
+    {
+      "id": 6154,
+      "first_name": "Kyrie",
+      "last_name": "Irving",
+      "position": "G",
+      "number": 11
+    },
+    {
+      "id": 12714,
+      "first_name": "Shane",
+      "last_name": "Larkin",
+      "position": "PG",
+      "number": 8
+    },
+    {
+      "id": 1965,
+      "first_name": "Greg",
+      "last_name": "Monroe",
+      "position": "F-C",
+      "number": 55
+    },
+    {
+      "id": 2444,
+      "first_name": "Marcus",
+      "last_name": "Morris",
+      "position": "F",
+      "number": 13
+    },
+    {
+      "id": 12275,
+      "first_name": "Abdel",
+      "last_name": "Nader",
+      "position": "PF",
+      "number": 28
+    },
+    {
+      "id": 31438,
+      "first_name": "Semi",
+      "last_name": "Ojeleye",
+      "position": "F",
+      "number": 37
+    },
+    {
+      "id": 31126,
+      "first_name": "Terry",
+      "last_name": "Rozier",
+      "position": "G",
+      "number": 12
+    },
+    {
+      "id": 24740,
+      "first_name": "Marcus",
+      "last_name": "Smart",
+      "position": "G",
+      "number": 36
+    },
+    {
+      "id": 52651,
+      "first_name": "Jayson",
+      "last_name": "Tatum",
+      "position": "F",
+      "number": 0
+    },
+    {
+      "id": 60058,
+      "first_name": "Daniel",
+      "last_name": "Theis",
+      "position": "F-C",
+      "number": 27
+    },
+    {
+      "id": 52283,
+      "first_name": "Guerschon",
+      "last_name": "Yabusele",
+      "position": "F",
+      "number": 30
+    }
+  ]
+}
