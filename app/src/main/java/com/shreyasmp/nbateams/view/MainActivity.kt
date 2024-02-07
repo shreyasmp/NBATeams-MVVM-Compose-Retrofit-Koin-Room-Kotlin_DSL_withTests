@@ -29,14 +29,9 @@ class MainActivity : ComponentActivity() {
             NBATeamsTheme {
                 Surface(color = MaterialTheme.colors.background) {
                     TeamListView(nbaTeamViewModel) {
-                        // On tap of list item, make call with team name for fetching team
-                        // details with player list that needs to be passed to detail screen.
-                        it.full_name.let { teamName ->
-                            nbaTeamViewModel.fetchNBATeamDetails(teamName)
-                        }
-                        nbaTeamViewModel.nbaTeamDetailResponse.observe(this) { teamData ->
-                            startActivity(DetailedViewActivity.newIntent(this, teamData))
-                        }
+                        // On tap of list item, show the details with player
+                        // list that needs to be passed to detail screen.
+                        startActivity(DetailedViewActivity.newIntent(this, it))
                     }
                 }
             }
