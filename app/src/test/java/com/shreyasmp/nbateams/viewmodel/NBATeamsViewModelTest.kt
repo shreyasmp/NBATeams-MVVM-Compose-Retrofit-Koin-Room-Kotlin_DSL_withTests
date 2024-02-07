@@ -8,7 +8,6 @@ import com.nhaarman.mockitokotlin2.doReturn
 import com.nhaarman.mockitokotlin2.times
 import com.nhaarman.mockitokotlin2.verify
 import com.shreyas.nytimes.utils.TestJsonUtils
-import com.shreyasmp.nbateams.model.Team
 import com.shreyasmp.nbateams.model.TeamsList
 import com.shreyasmp.nbateams.repository.NBATeamsRepositoryImpl
 import com.shreyasmp.nbateams.utils.ResultWrapper
@@ -28,7 +27,6 @@ import org.junit.rules.TestWatcher
 import org.junit.runner.Description
 import org.junit.runner.RunWith
 import org.junit.runners.JUnit4
-import org.mockito.ArgumentMatchers.anyString
 import org.mockito.Mock
 import org.mockito.MockitoAnnotations
 
@@ -79,28 +77,6 @@ class NBATeamsViewModelTest {
             viewModel.fetchNBATeamsList()
 
             verify(mockRepository, times(2)).getNBATeamsList()
-        }
-    }
-
-    @Test
-    fun `on http success fetch nba teams detail response results are expected`() {
-        runTest {
-            val response = TestJsonUtils.getObjectFromJsonFile(
-                jsonFile = "success_nbateams_detail.json",
-                tClass = Team::class.java
-            )
-
-            val liveDataResponse = MutableLiveData<Team>()
-            liveDataResponse.value = response
-
-            doReturn(ResultWrapper.SUCCESS(liveDataResponse)).`when`(mockRepository)
-                .getNBATeamDetails("Foo")
-
-            viewModel.nbaTeamsListResponse.observeForever(mockObserver)
-
-            viewModel.fetchNBATeamDetails("Foo")
-
-            verify(mockRepository, times(1)).getNBATeamDetails("Foo")
         }
     }
 

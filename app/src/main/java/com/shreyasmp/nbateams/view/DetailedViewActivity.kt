@@ -2,11 +2,9 @@ package com.shreyasmp.nbateams.view
 
 import android.content.Context
 import android.content.Intent
-import android.os.Build
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.annotation.RequiresApi
 import androidx.compose.foundation.layout.Row
 import androidx.compose.material.Scaffold
 import androidx.compose.material.Text
@@ -16,7 +14,6 @@ import com.shreyasmp.nbateams.model.Team
 import com.shreyasmp.nbateams.ui.TeamDetailedListView
 import com.shreyasmp.nbateams.ui.theme.NBATeamsTheme
 
-@RequiresApi(Build.VERSION_CODES.TIRAMISU)
 class DetailedViewActivity : ComponentActivity() {
 
     private val teamData: Team by lazy {
