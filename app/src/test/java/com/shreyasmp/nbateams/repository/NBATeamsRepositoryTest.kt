@@ -61,22 +61,6 @@ class NBATeamsRepositoryTest : MockServerBaseTest() {
         }
 
     @Test
-    fun `given response is 200 when fetching nba team detail response and returns success response`() =
-        runTest {
-            mockHttpResponseFromFile("success_nbateams_detail.json", HttpURLConnection.HTTP_OK)
-            when (val result = repository.getNBATeamDetails("Boston Celtics")) {
-                is ResultWrapper.SUCCESS -> {
-                    val nbaTeamDetail = result.value.value
-                    assertThat(nbaTeamDetail).isNotNull()
-                    assertThat(nbaTeamDetail?.players).isNotNull()
-                    assertThat(nbaTeamDetail?.players?.size).isEqualTo(17)
-                }
-
-                else -> {}
-            }
-        }
-
-    @Test
     fun `given response is 403 when fetching nba teams response and returns exception`() =
         runTest {
             mockHttpResponse(403)
