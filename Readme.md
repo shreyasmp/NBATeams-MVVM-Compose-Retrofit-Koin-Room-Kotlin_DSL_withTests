@@ -12,7 +12,7 @@
 8. Mockito/Espresso/extJunit/Robolectric for unit testing and android tests for viewmodel, views
 9. OKHttp Interceptor/Mockserver for logging service responses on Logcat and creating mock server
     for testing Repository
-10. Room Db for cache implementation for retrieved response
+10. Room Db for cache implementation for retrieved response in case network is lost
 
 Here's the video of how the app works and looks like.
 

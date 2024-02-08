@@ -36,7 +36,7 @@ class NBATeamsViewModel(private val repository: NBATeamsRepository) : ViewModel(
             when (result) {
                 is ResultWrapper.SUCCESS -> {
                     isError.value = false
-                    _nbaTeamsListResponse.value = result.value.value
+                    _nbaTeamsListResponse.value = result.value
                 }
 
                 is ResultWrapper.FAILURE -> {
