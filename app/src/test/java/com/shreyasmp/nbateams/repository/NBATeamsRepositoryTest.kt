@@ -1,8 +1,10 @@
 package com.shreyasmp.nbateams.repository
 
+import android.content.Context
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import com.google.common.truth.Truth.assertThat
 import com.shreyasmp.nbateams.base.MockServerBaseTest
+import com.shreyasmp.nbateams.database.NBATeamsDao
 import com.shreyasmp.nbateams.service.NBATeamService
 import com.shreyasmp.nbateams.utils.ResultWrapper
 import kotlinx.coroutines.test.runTest
@@ -12,6 +14,7 @@ import org.junit.Test
 import org.junit.rules.TestRule
 import org.junit.runner.RunWith
 import org.junit.runners.JUnit4
+import org.mockito.Mock
 import java.net.HttpURLConnection
 
 @RunWith(JUnit4::class)
@@ -24,11 +27,16 @@ class NBATeamsRepositoryTest : MockServerBaseTest() {
 
     private lateinit var repository: NBATeamsRepository
     private lateinit var service: NBATeamService
+    @Mock
+    private lateinit var dao: NBATeamsDao
+
+    @Mock
+    private lateinit var context: Context
 
     @Before
     fun setUp() {
         service = provideNBATeamsService()
-        repository = NBATeamsRepositoryImpl(service)
+        repository = NBATeamsRepositoryImpl(service, dao, context)
     }
 
     @Test
@@ -37,9 +45,9 @@ class NBATeamsRepositoryTest : MockServerBaseTest() {
             mockHttpResponseFromFile("success_nbateams_result.json", HttpURLConnection.HTTP_OK)
             when (val result = repository.getNBATeamsList()) {
                 is ResultWrapper.SUCCESS -> {
-                    val nbateams = result.value.value
+                    val nbateams = result.value
                     assertThat(nbateams).isNotNull()
-                    assertThat(nbateams?.teams?.size).isEqualTo(30)
+                    assertThat(nbateams?.size).isEqualTo(30)
                 }
 
                 else -> {}
@@ -52,8 +60,8 @@ class NBATeamsRepositoryTest : MockServerBaseTest() {
             mockHttpResponseFromFile("success_nbateams_empty.json", HttpURLConnection.HTTP_OK)
             when (val result = repository.getNBATeamsList()) {
                 is ResultWrapper.SUCCESS -> {
-                    val nbateams = result.value.value
-                    assertThat(nbateams?.teams).isNull()
+                    val nbateams = result.value
+                    assertThat(nbateams).isNull()
                 }
 
                 else -> {}

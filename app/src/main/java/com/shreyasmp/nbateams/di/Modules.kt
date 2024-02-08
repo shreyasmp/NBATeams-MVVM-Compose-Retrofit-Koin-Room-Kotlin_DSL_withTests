@@ -1,12 +1,17 @@
 package com.shreyasmp.nbateams.di
 
+import android.content.Context
+import androidx.room.Room
 import com.jakewharton.retrofit2.adapter.kotlin.coroutines.CoroutineCallAdapterFactory
+import com.shreyasmp.nbateams.database.NBATeamsDao
+import com.shreyasmp.nbateams.database.NBATeamsDatabase
 import com.shreyasmp.nbateams.repository.NBATeamsRepository
 import com.shreyasmp.nbateams.repository.NBATeamsRepositoryImpl
 import com.shreyasmp.nbateams.service.NBATeamService
 import com.shreyasmp.nbateams.viewmodel.NBATeamsViewModel
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
+import org.koin.android.ext.koin.androidContext
 import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.dsl.module
 import retrofit2.Retrofit
@@ -54,14 +59,23 @@ val networkModule = module {
 }
 
 val repositoryModule = module {
-    fun provideNBATeamsRepository(service: NBATeamService): NBATeamsRepository {
-        return NBATeamsRepositoryImpl(service)
+    fun provideNBATeamsRepository(
+        service: NBATeamService,
+        teamDao: NBATeamsDao,
+        context: Context
+    ): NBATeamsRepository {
+        return NBATeamsRepositoryImpl(service, teamDao, context)
     }
-    single { provideNBATeamsRepository(get()) }
+    single { provideNBATeamsRepository(get(), get(), androidContext()) }
 }
 
 val viewModelModule = module {
     viewModel {
         NBATeamsViewModel(repository = get())
     }
+}
+
+val roomDatabaseModule = module {
+    single { Room.databaseBuilder(get(), NBATeamsDatabase::class.java, "NBATeamDB").build() }
+    single { get<NBATeamsDatabase>().getNBATeamsDao() }
 }
