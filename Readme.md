@@ -1,4 +1,4 @@
-# NBATeams-MVVM-Compose-Retrofit-Koin-Kotlin_DSL_withTests
+# NBATeams-MVVM-Compose-Retrofit-Koin-Room-Kotlin_DSL_withTests
 
 # This is a MVVM Android App developed using some of latest Android libraries as of 2023/24
 
