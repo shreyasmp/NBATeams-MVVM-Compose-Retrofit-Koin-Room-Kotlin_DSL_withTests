@@ -61,7 +61,7 @@ fun TeamListView(
         content = { padding ->
             TeamList(
                 padding,
-                teamListData?.teams,
+                teamListData as MutableList<Team>?,
                 navigateToDetailView,
                 isLoading
             )

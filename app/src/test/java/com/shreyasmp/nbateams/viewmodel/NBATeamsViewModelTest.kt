@@ -8,6 +8,7 @@ import com.nhaarman.mockitokotlin2.doReturn
 import com.nhaarman.mockitokotlin2.times
 import com.nhaarman.mockitokotlin2.verify
 import com.shreyas.nytimes.utils.TestJsonUtils
+import com.shreyasmp.nbateams.model.Team
 import com.shreyasmp.nbateams.model.TeamsList
 import com.shreyasmp.nbateams.repository.NBATeamsRepositoryImpl
 import com.shreyasmp.nbateams.utils.ResultWrapper
@@ -45,7 +46,7 @@ class NBATeamsViewModelTest {
     private lateinit var viewModel: NBATeamsViewModel
 
     @Mock
-    private lateinit var mockObserver: Observer<TeamsList?>
+    private lateinit var mockObserver: Observer<List<Team>?>
 
     @Before
     fun setUp() {

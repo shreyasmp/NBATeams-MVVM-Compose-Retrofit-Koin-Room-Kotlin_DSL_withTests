@@ -5,5 +5,5 @@ import kotlinx.parcelize.Parcelize
 
 @Parcelize
 data class TeamsList(
-    val teams: MutableList<Team>? = null
+    val teams: List<Team> = emptyList()
 ) : Parcelable

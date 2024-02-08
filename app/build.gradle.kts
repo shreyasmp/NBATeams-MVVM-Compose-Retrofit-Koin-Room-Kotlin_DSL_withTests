@@ -119,7 +119,7 @@ dependencies {
     implementation(AppDependencies.koinWorkManager)
 
     annotationProcessor(AppDependencies.roomRuntime)
-    implementation(AppDependencies.roomCompiler)
+    kapt(AppDependencies.roomCompiler)
     implementation(AppDependencies.roomCoRoutine)
 
     implementation(AppDependencies.composeActivities)

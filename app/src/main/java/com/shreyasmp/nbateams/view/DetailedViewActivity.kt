@@ -47,9 +47,7 @@ fun TeamDetailView(
             TopAppBar(
                 title = {
                     Row {
-                        team.full_name?.let {
-                            Text(text = it)
-                        }
+                        Text(text = team.full_name)
                     }
                 }
             )

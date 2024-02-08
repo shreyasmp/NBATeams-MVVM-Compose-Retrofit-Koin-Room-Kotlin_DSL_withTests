@@ -4,6 +4,7 @@ import android.app.Application
 import com.shreyasmp.nbateams.di.apiModule
 import com.shreyasmp.nbateams.di.networkModule
 import com.shreyasmp.nbateams.di.repositoryModule
+import com.shreyasmp.nbateams.di.roomDatabaseModule
 import com.shreyasmp.nbateams.di.viewModelModule
 import org.koin.android.ext.koin.androidContext
 import org.koin.android.ext.koin.androidLogger
@@ -22,7 +23,8 @@ class MainApplication : Application() {
                 apiModule,
                 networkModule,
                 repositoryModule,
-                viewModelModule
+                viewModelModule,
+                roomDatabaseModule
             )
         }
     }
