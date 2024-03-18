@@ -51,7 +51,9 @@ class NBATeamsViewModelTest {
     @Before
     fun setUp() {
         MockitoAnnotations.openMocks(this)
-        viewModel = NBATeamsViewModel(mockRepository)
+        viewModel = NBATeamsViewModel(mockRepository).apply {
+            nbaTeamsListResponse.observeForever(mockObserver)
+        }
     }
 
     @Test
