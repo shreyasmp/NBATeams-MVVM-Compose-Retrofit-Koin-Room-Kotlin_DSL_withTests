@@ -42,7 +42,6 @@ object Versions {
     const val mockk = "1.13.8"
 
     const val robolectric = "4.5"
-    const val robolectricShadows = "4.5"
     const val kotlinCoroutineTest = "1.4.2"
     const val nhaarmanMockito = "2.2.0"
     const val okHttpMockServer = "4.7.2"
