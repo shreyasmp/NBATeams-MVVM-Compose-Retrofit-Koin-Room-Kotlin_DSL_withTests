@@ -92,9 +92,7 @@ object AppDependencies {
     // Robolectric and Espresso framework
     const val mockk = "io.mockk:mockk:${Versions.mockk}"
     const val robolectric = "org.robolectric:robolectric:${Versions.robolectric}"
-    const val robolectricShadows = "org.robolectric:shadows-multidex:${Versions.robolectricShadows}"
-    const val robolectricSupport =
-        "org.robolectric:shadows-supportv4:${Versions.robolectricShadows}"
+    const val robolectricSupport = "org.robolectric:shadows-supportv4:${Versions.robolectric}"
     const val espressoIdling =
         "androidx.test.espresso:espresso-idling-resource:${Versions.espresso}"
     const val espressoContrib = "androidx.test.espresso:espresso-contrib:${Versions.espresso}"
